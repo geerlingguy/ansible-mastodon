@@ -1,0 +1,33 @@
+---
+- name: Install linpack benchmark.
+  hosts: mastodon
+  become: true
+
+  vars_files: ['config.yml']
+
+  pre_tasks:
+    - name: Update apt cache.
+      ansible.builtin.apt:
+        update_cache: true
+        cache_valid_time: 600
+      when: ansible_os_family == 'Debian'
+      become: true
+
+    - import_tasks: tasks/users.yml
+
+  roles:
+    - geerlingguy.firewall
+    - geerlingguy.ntp
+    - geerlingguy.nodejs
+    - geerlingguy.postgresql
+    - geerlingguy.ruby
+    - geerlingguy.nginx
+    - geerlingguy.redis
+    - geerlingguy.certbot
+    - geerlingguy.security
+
+  tasks:
+    - import_tasks: tasks/dependencies.yml
+    - import_tasks: tasks/yarn.yml
+    - import_tasks: tasks/ruby.yml
+    - import_tasks: tasks/mastodon.yml

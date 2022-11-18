@@ -1,0 +1,36 @@
+---
+- name: Install dependencies.
+  ansible.builtin.package:
+    name:
+      - curl
+      - wget
+      - gnupg
+      - apt-transport-https
+      - lsb-release
+      - ca-certificates
+      - imagemagick
+      - ffmpeg
+      - libpq-dev
+      - libxml2-dev
+      - libxslt1-dev
+      - file
+      - git-core
+      - g++
+      - libprotobuf-dev
+      - protobuf-compiler
+      - pkg-config
+      - gcc
+      - autoconf
+      - bison
+      - build-essential
+      - libssl-dev
+      - libyaml-dev
+      - libreadline6-dev
+      - zlib1g-dev
+      - libncurses5-dev
+      - libffi-dev
+      - libgdbm-dev
+      - libidn11-dev
+      - libicu-dev
+      - libjemalloc-dev
+    state: present
