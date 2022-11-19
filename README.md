@@ -1,5 +1,7 @@
 # Ansible Mastodon Playbook
 
+[![CI](https://github.com/geerlingguy/ansible-mastodon/workflows/CI/badge.svg?branch=master&event=push)](https://github.com/geerlingguy/ansible-mastodon/actions?query=workflow%3ACI)
+
 Well, I'm not sure how Twitter's going to go, so I thought I'd mess around with the Federated tootiverse.
 
 So here's an Ansible playbook to set up a single server Mastodon instance, following (roughly, but much more automated-ly) the [official Mastodon source install guide](https://docs.joinmastodon.org/admin/install/).
