@@ -2,9 +2,9 @@
 - name: Create admin user account.
   user:
     name: "{{ admin_user }}"
-    createhome: yes
+    createhome: true
     home: "/home/{{ admin_user }}"
-    generate_ssh_key: yes
+    generate_ssh_key: true
     ssh_key_comment: "ansible-{{ inventory_hostname }}"
     password: "{{ admin_password }}"
     groups: "{{ admin_group }}"
@@ -28,5 +28,5 @@
   ansible.builtin.user:
     name: "{{ mastodon_user }}"
     shell: /sbin/nologin
-    create_home: no
+    create_home: false
     state: present

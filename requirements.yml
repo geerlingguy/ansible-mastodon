@@ -9,4 +9,3 @@ roles:
   - name: geerlingguy.redis
   - name: geerlingguy.certbot
   - name: geerlingguy.security
-  - name: name: arknoll.selenium
