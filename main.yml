@@ -1,5 +1,5 @@
 ---
-- name: Install linpack benchmark.
+- name: Configure Mastodon.
   hosts: mastodon
   become: true
 

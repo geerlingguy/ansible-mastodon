@@ -10,6 +10,20 @@
     groups: "{{ admin_group }}"
     shell: /bin/bash
 
+- name: Create .ssh folder.
+  file:
+    path: "/home/{{ admin_user }}/.ssh"
+    state: directory
+    owner: "{{ admin_user }}"
+    group: "{{ admin_user }}"
+    mode: 0700
+
+- name: Add SSH key to admin user account.
+  ansible.posix.authorized_key:
+    user: "{{ admin_user }}"
+    state: present
+    key: "{{ lookup('file', admin_user_ssh_pubkey_file) }}"
+
 - name: Add Mastodon user.
   ansible.builtin.user:
     name: "{{ mastodon_user }}"
