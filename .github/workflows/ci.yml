@@ -45,5 +45,8 @@ jobs:
           cp example.hosts.ini hosts.ini
           cp example.config.yml config.yml
 
+      - name: Install role dependencies.
+        run: ansible-galaxy install -r requirements.yml --force
+
       - name: Check the syntax of the playbook.
         run: ansible-playbook main.yml --syntax-check

@@ -2,9 +2,11 @@
 
 [![CI](https://github.com/geerlingguy/ansible-mastodon/workflows/CI/badge.svg?branch=master&event=push)](https://github.com/geerlingguy/ansible-mastodon/actions?query=workflow%3ACI)
 
-Well, I'm not sure how Twitter's going to go, so I thought I'd mess around with the Federated tootiverse.
+Welcome to the tootiverse.
 
-So here's an Ansible playbook to set up a single server Mastodon instance, following (roughly, but much more automated-ly) the [official Mastodon source install guide](https://docs.joinmastodon.org/admin/install/).
+This Ansible playbook sets up a single server Mastodon instance, following (roughly, but much more automated-ly) the [official Mastodon source install guide](https://docs.joinmastodon.org/admin/install/).
+
+> Note: The playbook is a work in progress. See this issue for details: [Make it like... work and stuff](https://github.com/geerlingguy/ansible-mastodon/issues/1).
 
 ## Usage
 
