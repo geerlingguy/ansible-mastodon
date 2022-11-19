@@ -1,0 +1,12 @@
+---
+roles:
+  - name: geerlingguy.firewall
+  - name: geerlingguy.ntp
+  - name: geerlingguy.nodejs
+  - name: geerlingguy.postgresql
+  - name: geerlingguy.ruby
+  - name: geerlingguy.nginx
+  - name: geerlingguy.redis
+  - name: geerlingguy.certbot
+  - name: geerlingguy.security
+  - name: name: arknoll.selenium
