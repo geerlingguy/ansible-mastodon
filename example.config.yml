@@ -1,0 +1,50 @@
+---
+admin_user: my-admin-user
+# To generate password on OS X: `openssl passwd -salt [salt] -1 [password]`.
+admin_password: my-generated-password
+admin_group: sudo
+admin_user_ssh_pubkey_file: /home/my-username/.ssh/id_ed25519.pub
+
+security_sudoers_passwordless: ['{{ admin_user }}']
+
+ntp_timezone: America/Chicago
+
+firewall_allowed_tcp_ports:
+  - "22"
+  - "25"
+  - "80"
+  - "443"
+
+mastodon_instance_url: my-toot-domain.social
+mastodon_user: mastodon
+
+nodejs_version: "16.x"
+
+nginx_remove_default_vhost: true
+
+ruby_install_bundler: true
+ruby_install_gems_user: mastodon
+ruby_install_from_source: true
+ruby_download_url: http://cache.ruby-lang.org/pub/ruby/3.0/ruby-3.0.3.tar.gz
+ruby_version: 3.0.3
+
+postgresql_databases:
+  - name: mastodon
+    owner: mastodon
+    state: present
+postgresql_users:
+  - name: mastodon
+    password: super-secure-password-here
+    state: present
+
+certbot_install_method: snap
+certbot_create_if_missing: true
+certbot_create_method: standalone
+certbot_admin_email: email@example.com
+certbot_certs:
+  - email: email@example.com
+    webroot: "/home/mastodon/live/public"
+    domains:
+      - "{{ mastodon_instance_url }}"
+certbot_create_standalone_stop_services:
+  - nginx
