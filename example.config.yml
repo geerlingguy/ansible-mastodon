@@ -25,8 +25,8 @@ nginx_remove_default_vhost: true
 ruby_install_bundler: true
 ruby_install_gems_user: mastodon
 ruby_install_from_source: true
-ruby_download_url: http://cache.ruby-lang.org/pub/ruby/3.0/ruby-3.0.3.tar.gz
-ruby_version: 3.0.3
+ruby_download_url: http://cache.ruby-lang.org/pub/ruby/3.0/ruby-3.0.4.tar.gz
+ruby_version: 3.0.4
 
 postgresql_databases:
   - name: mastodon
