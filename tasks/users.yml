@@ -28,5 +28,5 @@
   ansible.builtin.user:
     name: "{{ mastodon_user }}"
     shell: /sbin/nologin
-    create_home: false
+    create_home: true
     state: present
