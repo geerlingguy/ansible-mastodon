@@ -3,7 +3,7 @@ admin_user: my-admin-user
 # To generate password on OS X: `openssl passwd -salt [salt] -1 [password]`.
 admin_password: my-generated-password
 admin_group: sudo
-admin_user_ssh_pubkey_file: /home/my-username/.ssh/id_ed25519.pub
+admin_user_ssh_pubkey_file: /home/my-username/.ssh/id_rsa.pub
 
 security_sudoers_passwordless: ['{{ admin_user }}']
 
